@@ -64,7 +64,7 @@ public class FormLogin extends javax.swing.JFrame {
             panelGlass2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGlass2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelGlass2Layout.setVerticalGroup(
@@ -72,7 +72,7 @@ public class FormLogin extends javax.swing.JFrame {
             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        getContentPane().add(panelGlass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 130, 30));
+        getContentPane().add(panelGlass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 200, 30));
 
         panelGlass1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         panelGlass1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 35, 205, -1));
