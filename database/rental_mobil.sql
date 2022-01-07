@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Jan 2022 pada 05.21
+-- Waktu pembuatan: 07 Jan 2022 pada 07.24
 -- Versi server: 10.4.19-MariaDB
 -- Versi PHP: 8.0.6
 
@@ -42,14 +42,14 @@ CREATE TABLE `tb_mobil` (
 --
 
 INSERT INTO `tb_mobil` (`id_mobil`, `merek`, `tipe`, `tahun`, `nopol`, `harga`, `status`) VALUES
-(19, 'Daihatsu', 'Vios', '2014', 'B 5', 400000, 'Tersedia'),
-(29, 'Lamborghini', 'Veneno', '2018', 'B 16 A', 11000000, 'Tersedia'),
-(21, 'Honda', 'Jazz', '2017', 'B 3 RI', 500000, 'Tersedia'),
-(17, 'Suzuki', 'Eskudo', '2012', 'B 4', 600000, 'Tersedia'),
-(16, 'Toyota', 'Avanza', '2014', 'B 2', 400000, 'Tersedia'),
-(31, 'VW', 'Combi', '2008', 'B 4', 600000, 'Tersedia'),
-(28, 'Mitsubishi', 'Lancer Evo', '2017', 'B 14', 700000, 'Tersedia'),
-(30, 'Toyota', 'Alphard', '2017', 'D 4 RY', 600000, 'Tersedia');
+(1, 'Daihatsu', 'Vios', '2014', 'B 5', 400000, 'Tersedia'),
+(2, 'Lamborghini', 'Veneno', '2018', 'B 16 A', 11000000, 'Tersedia'),
+(3, 'Honda', 'Jazz', '2017', 'B 3 RI', 500000, 'Tersedia'),
+(4, 'Toyota', 'Avanza', '2014', 'B 2', 400000, 'Tersedia'),
+(5, 'VW', 'Combi', '2008', 'B 4', 600000, 'Tersedia'),
+(6, 'Mitsubishi', 'Lancer Evo', '2017', 'B 14', 700000, 'Tersedia'),
+(7, 'Toyota', 'Alphard', '2017', 'D 4 RY', 600000, 'Tersedia'),
+(34, 'VW', 'Combi', '2018', 'B 9', 900000, 'Tersedia');
 
 -- --------------------------------------------------------
 
@@ -60,31 +60,11 @@ INSERT INTO `tb_mobil` (`id_mobil`, `merek`, `tipe`, `tahun`, `nopol`, `harga`, 
 CREATE TABLE `tb_peminjam` (
   `id_peminjam` int(20) NOT NULL,
   `nama` varchar(20) NOT NULL,
-  `nik` int(20) NOT NULL,
+  `nik` int(20) DEFAULT NULL,
   `alamat` varchar(50) NOT NULL,
   `telp` varchar(20) NOT NULL,
   `email` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tb_peminjam`
---
-
-INSERT INTO `tb_peminjam` (`id_peminjam`, `nama`, `nik`, `alamat`, `telp`, `email`) VALUES
-(14, 'Qori', 0, 'Bekasi', '07519400390', 'Qori@gmail.com'),
-(13, 'Glenn', 0, 'Cicalengka', '085289388949', 'jksolslopdm'),
-(10, 'Ismail', 0, 'Tasik', '081353666345', 'mail.com'),
-(17, 'Sidiq', 0, 'Padang	', '085276878499', 'Shidiq.com'),
-(18, 'Qoriah Indah Susilow', 0, 'Jl AH Nasution, Cibiru, Bandung', '081317812207', 'Qoriahindah@gmail'),
-(20, 'ihsan miftahul huda', 0, 'bandung', '089232033927', 'mask@gmail.com'),
-(21, 'ihsan miftahul huda', 0, 'Cibiru', '089232033927', 'mask@gmail.com'),
-(22, 'alvito', 0, 'kajsdhakdhkadhkawud	', '085799504760', 'alvito@gmail.com'),
-(23, 'Ronal', 0, 'Pondok gede', '089765121907', 'ronal@gmail.com'),
-(24, 'Ronal', 0, 'Pondok gede', '089765121907', 'ronal@gmail.com'),
-(25, 'Alvito', 0, 'Jl. Tebet	', '085182731827', 'alvito@gmail.com'),
-(26, 'Alvito', 0, 'Jl. Tebet	', '085182731827', 'alvito@gmail.com'),
-(27, 'Ronaldo', 0, 'JL. Pondok Gede', '0878787878787878', 'ronaldo@gmail.com'),
-(28, 'Ronaldo', 0, 'JL. Pondok Gede', '0878787878787878', 'ronaldo@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -103,13 +83,6 @@ CREATE TABLE `tb_transaksi` (
   `total` varchar(20) DEFAULT NULL,
   `denda` varchar(20) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tb_transaksi`
---
-
-INSERT INTO `tb_transaksi` (`id_transaksi`, `peminjam`, `nopol`, `harga`, `tgl_pinjaman`, `tgl_kembali`, `lama`, `total`, `denda`) VALUES
-(30, 'Alvito', 'D 3 RY', '500000', '2019-12-27', '2019-12-31', '4', '2000000', NULL);
 
 -- --------------------------------------------------------
 
@@ -131,7 +104,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `nama`, `username`, `password`, `type`) VALUES
 (6, 'admin', 'admin', 'admin', 'Admin'),
-(7, 'staff', 'staff', 'staff', 'Staff');
+(13, 'staff', 'staff', 'staff', 'Staff'),
+(12, 'dimas', 'dimas', 'dimas', 'Admin');
 
 --
 -- Indexes for dumped tables
@@ -169,25 +143,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `tb_mobil`
 --
 ALTER TABLE `tb_mobil`
-  MODIFY `id_mobil` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_mobil` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_peminjam`
 --
 ALTER TABLE `tb_peminjam`
-  MODIFY `id_peminjam` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_peminjam` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
-  MODIFY `id_transaksi` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_transaksi` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
