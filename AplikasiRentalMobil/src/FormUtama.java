@@ -86,6 +86,8 @@ public class FormUtama extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnFormPeminjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 210, 80));
+
+        jDesktopPane1.setBackground(new java.awt.Color(204, 255, 255));
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 1220, 891));
 
         btnFormMobil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/add_mobil1.png"))); // NOI18N
